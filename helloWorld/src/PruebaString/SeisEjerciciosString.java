@@ -36,7 +36,9 @@ public class SeisEjerciciosString {
 //		10 -- escribe un programa que convierta en mayúsculas la primera letra de cada 
 //		palabra de un StringBuilder.
 		capitalize("hola ke aze");
-		
+//		11 -- escribe un programa para invertir cada palabra de un párrafo de un 
+//		StringBuilder.
+		reverseAllWords("Estoy muy malito");
 //		00 -- ForEach in java.
 		int numeros[] = { 24, 4, 23, 55, 34, 33 };
 		forEach(numeros);
@@ -178,12 +180,34 @@ public class SeisEjerciciosString {
 	public static void capitalize(String sentence) {
 		StringBuilder res = new StringBuilder(sentence);
 		
+		res.setCharAt(0, Character.toUpperCase(res.charAt(0)));
+		
 		for (int i = 0; i < sentence.length(); i++) {
 			if (sentence.charAt(i) == ' ') {
-				System.out.println(i);
+				res.setCharAt(i+1, Character.toUpperCase(res.charAt(i+1)));
+				System.out.println("10 -- " + Character.toUpperCase(res.charAt(i+1)));
 			}
 		}
 		
+		System.out.println(res.toString());
+	}
+	
+	public static void reverseAllWords(String sentence) {
+		StringBuilder res = new StringBuilder();
+		
+		String parraf [] = sentence.split(" ");
+		
+		for (String word : parraf) {
+			System.out.println("11 -- "+word);
+			
+			StringBuilder wordBuild = new StringBuilder(word);
+			wordBuild.reverse();
+			
+			res.append(wordBuild);
+			res.append(" ");
+		}
+		
+		System.out.println("11 -- "+res.toString());
 	}
 	
 	
