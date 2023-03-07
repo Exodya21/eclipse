@@ -1,0 +1,46 @@
+Vas a tener que crear un modelo que sera class Gestor
+para definirle todos sus atributos como 
+el nombre y su contacto, con su constructor 
+con esos 2 atrr obligatorios y sus getters and
+setters. A esta clase podrias ponerle una interface
+para crear el tipo Gestor.
+
+Ahora crearemos la class GestorController
+para crear un metodo que reciva un parametro int con el
+cual indicaremos cuantos gestores crearemos.
+Esta funcion podria tener un bucle y utilice el parametro
+int para limitar los bucles. Y dentro del bucle
+instanciarás un new class Gestor pasandole nombres,
+y numeros de telefono aleatorios gracias a otro metodo
+por ejemplo Ramdom.getName() y Ramdom.getTelf()
+y luego tendras que crear otro metodo para guardalos en
+alguna DB
+
+Para obtener un gestor podriamos crear un metodo en
+GestorController llamado getGestorByName() y que reciva 
+un parametro obligatorio que fuese un string. Este metodo
+te devolveria ese gestor si hay coincidencia con ese nombre
+ya que habria hecho una consulta a la DB y si fue correcta
+te devolveria ese gestor y si no lo fue pues un error de 
+NotFound
+
+Para ahora obtener todos los gestores que tengas sera
+mas facil que lo anterior. Podria llamarse getAllGestores()
+y este te traeria todos los gestores que esten guardados en
+la DB y por ejemplo si fuesen 0 diria un Error de no hay gestores
+
+Para actualizar un gestor podriamos crear un metodo en
+GestorController que reciba un gestor con los datos 
+modificados y haga la peticion a la DB para actualizar los
+datos.
+
+y por ultimo, para eliminar un gestor podriamos volver a
+crear un metodo en GestorController que se llame
+deleteGestorByName y que si le pasas un nombre de un 
+gestor que exista pues ésta hara una peticion a la DB de
+eliminarlo.
+
+Y todos estos metodos el GestorController los utilizarias en
+tu vista para utilizar toda esta logica y por ejemplo 
+"conectar" un metodo a un boton.
+
