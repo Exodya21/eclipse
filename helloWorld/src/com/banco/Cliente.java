@@ -1,16 +1,24 @@
 package com.banco;
 
-public class Gestor {
+public class Cliente {
 	//Atributos
-	private int id;
+
+	private int id,	id_gestor;
 	private String usuario, password, correo;
+	private double saldo;
 	
-	//Getters y setters
+	//Getters y Setters
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public int getId_gestor() {
+		return id_gestor;
+	}
+	public void setId_gestor(int id_gestor) {
+		this.id_gestor = id_gestor;
 	}
 	public String getUsuario() {
 		return usuario;
@@ -30,7 +38,10 @@ public class Gestor {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	
-	
-
+	public double getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
 }
