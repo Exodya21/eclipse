@@ -10,19 +10,21 @@ public class Insert {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			//Conexión
-			Connection conexion = 
-			DriverManager.getConnection("jdbc:mysql://localhost:3306/banco",
-					"banco", "fullstack");
-			//Instrucción SQL
-			// obtención de un objeto de tipo Statement 
+			
+			Connection conexion = DriverManager
+					.getConnection("jdbc:mysql://localhost:3306/banco", "banco", "fullstack");
+			
 			Statement instruccion = conexion.createStatement();
-			// construir sentencia SQL
+			
 			String query = "INSERT INTO gestor (usuario, password, correo)"
 					+ " VALUES ('gestor9', 'dsjadjdas', 'gestor9@correo.com')";
-			// Primera FORMA ejecutar instrucción con el método execute 
+			
 			boolean resultado = instruccion.execute(query);
-			// si es false, entonces la instrucción no devuelve un objeto de 			// tipo ResultSet 
+			
+			
+			
+			
+			// si es false, entonces la instrucción no devuelve un objeto de tipo ResultSet 
 			if (!resultado) {
 			// mostrar el número de registros insertados
 				System.out.println("Registros insertados: " +

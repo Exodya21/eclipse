@@ -17,7 +17,8 @@ public class PruebaConexion {
 			usuario: banco 
 			contraseña: fullstack
 			*/
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "banco", "fullstack");
+//			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/exam4", "banco", "fullstack");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/exam4", "root", "");
 			// muestra información del tipo de sistema de base de datos 
 			// (MySQL) 
 			System.out.println("Base de datos: " + conexion.getMetaData().getDatabaseProductName());
