@@ -186,7 +186,7 @@ public class crud {
 			
 			Connection conexion = DriverManager.getConnection(uri, user, pass);
 			Statement instruccion = conexion.createStatement();
-			Statement instruccion2 = conexion.createStatement();
+//			Statement instruccion2 = conexion.createStatement();
 			
 			String query = "UPDATE "+ tabla +
 							" SET nombre = '"+ param1 +
