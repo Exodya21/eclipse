@@ -1,0 +1,16 @@
+package com.spring.interfaces;
+
+public interface Profesor {
+	public abstract String getEntrenamiento();
+	// nuevo método para obtener la experiencia a partir del servicio que se inyectará 
+	public abstract int getExperiencia();
+	
+	public String getEmail();
+	public void setEmail(String email); 
+	public String getEquipo();
+	public void setEquipo(String equipo); 
+	public int getJugadores();
+	public void setJugadores(int jugadores);
+}
+
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context.xsd">
+<!-- a partir de aquí se definen los beans -->
+
+<!-- servicio añadido -->
+<bean id="miExperienciaServicio" class="com.spring.PocaExperienciaServicio">
+</bean>
+
+<bean id="miProfesorInformatica" class="com.spring.ProfesorInformatica">
+<!-- se establece qué bean se inyecta (miExperienciaServicio) y dónde (en el 
+constructor) -->
+	<constructor-arg ref="miExperienciaServicio"></constructor-arg>
+</bean>
+
+<bean id="miProfesorMates" class="com.spring.ProfesorMates">
+<!-- se establece qué bean se inyecta (miExperienciaServicio) y sobre qué método 
+setter (setExperienciaServicio) -->
+	<property name="experienciaServicio" ref="miExperienciaServicio" />
+</bean>
+
+<bean id="miProfesorOrientacion" class="com.spring.ProfesorOrientacion">
+	<property name="email" value="correodeprueba@mail.com" />
+	<property name="equipo" value="New Team" />
+</bean>
+
+<!-- carga del archivo datos.properties -->
+	<!-- asigna el valor de la clave email del archivo properties -->
+	<!-- asigna el valor de la clave equipo del archivo properties -->
+<!--
+<context:property-placeholder location="classpath:datos.properties"/>
+
+<bean id="mientrenador4" class="com.spring.EntrenadorRugby">
+	<property name="email" value="${email}" />
+	<property name="equipo" value="${equipo}" />
+	<property name="jugadores" value="${jugadores}" />
+</bean>-->
+
+</beans>
