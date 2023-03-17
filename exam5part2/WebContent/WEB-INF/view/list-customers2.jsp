@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>Lista de Clientes</title>
+	<title>Lista de Nombres</title>
 	
 	<!-- reference our style sheet -->
 
@@ -17,8 +17,6 @@
 
 <body>
 
-		
-	<h1>HOLA MUNDO</h1>
 	<div id="wrapper">
 		<div id="header">
 			<h2>CRM - Gestión de Clientes</h2>
@@ -32,7 +30,7 @@
 			<!-- put new button: Add Customer -->
 		
 			<input type="button" value="Add Customer"
-				   onclick="window.location.href='showFormForAdd'; return false;"
+				   onclick="window.location.href='mostrarFormulario'; return false;"
 				   class="add-button"
 			/>
 		
@@ -41,8 +39,6 @@
 			<table>
 				<tr>
 					<th>Nombre</th>
-					<th>Apellidos</th>
-					<th>Correo</th>
 					<th>Acciones</th>
 				</tr>
 				
@@ -61,8 +57,6 @@
 					
 					<tr>
 						<td> ${tempCustomer.firstName} </td>
-						<td> ${tempCustomer.lastName} </td>
-						<td> ${tempCustomer.email} </td>
 						
 						<td>
 							<!-- display the update link -->

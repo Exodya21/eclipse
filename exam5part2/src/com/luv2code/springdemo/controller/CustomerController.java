@@ -22,6 +22,29 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
+	
+	@GetMapping("/listNames")
+	public String listNames(Model theModel) {
+		
+		// get customers from the service
+		List<Customer> theCustomers = customerService.getCustomers();
+				
+		// add the customers to the model
+		theModel.addAttribute("customers", theCustomers);
+		
+		return "list-customers2";
+	}
+	@GetMapping("/mostrarFormulario")
+	public String mostrarFormulario(Model theModel) {
+		
+		// create model attribute to bind form data
+		Customer theCustomer = new Customer();
+		
+		theModel.addAttribute("customer", theCustomer);
+		
+		return "customer-form3";
+	}
+	
 	@GetMapping("/list")
 	public String listCustomers(Model theModel) {
 		
@@ -51,7 +74,7 @@ public class CustomerController {
 		// save the customer using our service
 		customerService.saveCustomer(theCustomer);	
 		
-		return "redirect:/customer/list";
+		return "redirect:/customer/listNames";
 	}
 	
 	@GetMapping("/showFormForUpdate")
